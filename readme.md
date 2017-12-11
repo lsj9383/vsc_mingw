@@ -1,8 +1,11 @@
 # Visual Studio Code(VSC)配置基于MinGW编译器的C/C++说明
 
-## 1.Mingw环境安装
+## 1.MinGW环境安装
+在MinGW[官网](http://www.mingw.org/)下载MinGW并打开MinGW Manager配置下载的工具，这里的工具包括了gcc,g++,gdb等。
 
 ## 2.VSC环境配置
+需要安装插件：C/C++ for Visual Studio Code。
+![](resource/c_for_vsc.png)
 
 ## 3.配置文件
 VSC以文件夹的形式管理项目，编译也是按项目为单位进行的，因此需要用VSC打开文件夹。
@@ -18,11 +21,10 @@ VSC以文件夹的形式管理项目，编译也是按项目为单位进行的�
 	* 显示方式的设置，采用默认即可，甚至可以不用。
 
 在配置中，最需要小心的路径方面的配置，并且路径方面的配置主要分了两个方面:
-#### 1).vsc智能提示路径
-智能提示路径的作用是使VSC可以找到.h文件的位置，并且可以在输入函数的时候能够对函数所需参数进行提示。gcc编译相关的路径和这个路径没有任何关系。
-
-#### 2).gcc路径
-这个是指gcc编译所用到的路径，主要是-I参数指定头文件路径位置，用于在预处理部分可以定位到include的文件并将其展开。
+* vsc智能提示路径
+	* 智能提示路径的作用是使VSC可以找到.h文件的位置，并且可以在输入函数的时候能够对函数所需参数进行提示。gcc编译相关的路径和这个路径没有任何关系。
+* gcc路径
+	* 这个是指gcc编译所用到的路径，主要是-I参数指定头文件路径位置，用于在预处理部分可以定位到include的文件并将其展开。
 
 ### 1).c_cpp_properties.json
 主要是修改Win32下的includePath部分，用于智能提示寻找header。
@@ -95,4 +97,4 @@ VSC以文件夹的形式管理项目，编译也是按项目为单位进行的�
 ```
 
 ### 4).settings.json
-该文件过长，并可以忽略，因此不给出具体代码。需要settings.json源码可以在[这里](gccdemo/.vscode/settings.json)查看。
+该文件可以忽略，因此不给出具体代码。若需要settings.json源码可以在[这里](gccdemo/.vscode/settings.json)查看。
