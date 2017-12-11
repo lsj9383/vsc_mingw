@@ -1,7 +1,7 @@
 # Visual Studio Code(VSC)配置基于MinGW编译器的C/C++说明
 
 ## 1.MinGW环境安装
-在MinGW[官网](http://www.mingw.org/)下载MinGW并打开MinGW Manager配置下载的工具，这里的工具包括了gcc,g++,gdb等。
+在MinGW[官网](http://www.mingw.org/)下载MinGW并打开MinGW Manager配置下载的工具，这里的工具包括了gcc,g++,gdb等(将包含这些关键词的工具全部安装即可)。
 
 ## 2.VSC环境配置
 需要安装插件：C/C++ for Visual Studio Code。
@@ -48,8 +48,8 @@ VSC以文件夹的形式管理项目，编译也是按项目为单位进行的�
     "command": "gcc",
     "args": [
         "-g","${file}",
-        "-I","inc",			// .h文件搜索路径
-        "<other-c-file>",	// 待链接的文件以及库
+        "-I","<other-header-dir>"
+        "<other-c-file>",
         "-o","${fileDirname}/${fileBasenameNoExtension}.exe"],
     "problemMatcher": {
         "owner": "cpp",
